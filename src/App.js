@@ -1,14 +1,15 @@
 import './App.scss';
 import { Container } from 'react-bootstrap';
-import { Header } from '../src/components/Header';
-import { ImagesCollection } from '../src/components/ImagesCollection';
-import { Carousel } from '../src/components/Carousel'
 
 function App() {
   return (
     <div>
       <Container className="px-4 py-4">
-        <Carousel />
+        <img
+          src={`/images/banner/fuchs.jpeg`}
+          style={{
+            width: '100%',
+          }} />
       </Container>
     </div>
   );

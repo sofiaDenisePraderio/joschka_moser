@@ -9,11 +9,11 @@ export const Carousel = () => {
   const imagesList = [...new Array(15)].map((number, index) => `/images/diaryFirst/Web-${index + 1}.jpg`)
   return (
     <Swiper
-    className="mySwiper"
-    pagination={{
-      dynamicBullets: true,
-    }}
-    modules={[Pagination]}
+      className="mySwiper"
+      // pagination={{
+      //   type: "progressbar",
+      // }}
+      modules={[Pagination]}
       spaceBetween={50}
       slidesPerView={1}
       onSlideChange={() => console.log('slide change')}
@@ -23,8 +23,8 @@ export const Carousel = () => {
         imagesList.map((imgUrl, index) => {
           return (
             <SwiperSlide>
-              <img src={imgUrl} key={index}/>
-              </SwiperSlide>
+              <img src={imgUrl} key={index} />
+            </SwiperSlide>
           )
         })
       }

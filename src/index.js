@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <Container className="px-4" style={{marginTop: "70px"}}>
+      <Container style={{marginTop: "75px"}}>
         <Header />
         <Routes>
           <Route path="/projects/:project" element={<ImagesCollection />} />
