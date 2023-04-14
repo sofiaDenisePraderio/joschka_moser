@@ -82,7 +82,7 @@ export const ImagesCollection = () => {
   }, [project]);
 
   const imagesList = [...new Array(projects[project].quantity)].map((number, index) =>
-    `/images/${project}/${projects[project].subpath}${index + 1}.jpg`)
+    `/joschka_moser/images/${project}/${projects[project].subpath}${index + 1}.jpg`)
 
   return (
     <div className="py-4" style={{                    opacity: smoothRender ? 0 : 1,
