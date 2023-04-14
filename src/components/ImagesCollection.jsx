@@ -77,14 +77,16 @@ export const ImagesCollection = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setTimeout(() => setsmoothRender(false), 20);
+    setTimeout(() => setsmoothRender(false), 40);
+    console.log('changed');
   }, [project]);
 
   const imagesList = [...new Array(projects[project].quantity)].map((number, index) =>
     `/images/${project}/${projects[project].subpath}${index + 1}.jpg`)
 
   return (
-    <div className="py-4">
+    <div className="py-4" style={{                    opacity: smoothRender ? 0 : 1,
+      transition: "all 1.5s",}}>
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
       >
