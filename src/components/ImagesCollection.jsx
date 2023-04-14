@@ -91,38 +91,44 @@ export const ImagesCollection = () => {
             imagesList.map((imgUrl, index) => {
               if (project !== "main") {
                 return (
-                  <img
-                    src={imgUrl}
-                    style={{
-                      opacity: smoothRender ? 0 : 1,
-                      transition: "all 1s",
-                      transform: "scale(1.04) rotate(0.01deg)",
-                    }}
-                    alt="collection"
-                    key={index}
-                  />
+                  <div style={{
+                    opacity: smoothRender ? 0 : 1,
+                    transition: "all 1s",
+                    transform: "scale(1.04) rotate(0.01deg)",
+                  }}>
+                    <img
+                      src={imgUrl}
+                      style={{
+                        height: 'auto',
+                        width: '100%'
+                      }}
+                      alt="collection"
+                      key={index}
+                    />
+                  </div>
                 )
               } else {
                 return (
-                  // <div>
-                  <img
-                    style={{
-                      opacity: smoothRender ? 0 : 1,
-                      transition: "all 1.5s",
-                      cursor: "pointer",
-                      height: 'auto',
-                      width: '100%'
-                    }}
-                    src={imgUrl}
-                    onClick={() => {
-                      navigate(`/projects/${mainNavigation[index + 1]}`);
-                    }}
-                    alt="collection"
-                    key={index} 
-                    className="img-hover"
+                  <div style={{
+                    opacity: smoothRender ? 0 : 1,
+                    transition: "all 1.5s",
+                    cursor: "pointer",
+                  }}>
+                    <img
+                      style={{
+                        height: 'auto',
+                        width: '100%'
+                      }}
+                      src={imgUrl}
+                      onClick={() => {
+                        navigate(`/projects/${mainNavigation[index + 1]}`);
+                      }}
+                      alt="collection"
+                      key={index}
+                      className="img-hover"
                     />
-                    // <p>someeeethinggg</p>
-                    // </div>
+                    <p>{mainNavigation[index + 1]}</p>
+                  </div>
                 )
               }
             })

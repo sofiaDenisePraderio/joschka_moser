@@ -3,15 +3,15 @@ import { Container } from 'react-bootstrap';
 
 function App() {
   return (
-    <div>
-      <Container className="px-4 py-4">
+      <Container style={{maxHeight: '90vh', overflow: 'hidden'}}>
         <img
           src={`/images/banner/fuchs.jpeg`}
           style={{
             width: '100%',
+            height: 'auto',
+            overflow: 'hidden'
           }} />
       </Container>
-    </div>
   );
 }
 
