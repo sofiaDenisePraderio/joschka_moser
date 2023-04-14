@@ -15,54 +15,56 @@ const mainNavigation = {
   9: "diaryFirst"
 }
 
+const mainTitle = {
+  1: "Biermann",
+  2: "Vollkontakt",
+  3: "Fremde betten",
+  4: "Diary 2",
+  5: "Portraits",
+  6: "Covid homes",
+  7: "24h güter",
+  8: "Zeit Online",
+  9: "Diary 1"
+}
+
 const projects = {
   biermann: {
-    title: "Oli",
     subpath: "Moser_Oli-",
     quantity: 19,
   },
   covid: {
-    title: "Covid homes",
     subpath: "Home-",
     quantity: 12,
   },
   diaryFirst: {
-    title: "Diary",
     subpath: "Web-",
     quantity: 15,
   },
   diarySecond: {
-    title: "Diary",
     subpath: "Web-",
     quantity: 15,
   },
   fremde: {
-    title: "Fremde betten",
     subpath: "shelter-",
     quantity: 26,
   },
   guter: {
-    title: "24h güter",
     subpath: 'freight-',
     quantity: 22,
   },
   main: {
-    title: "something here",
     subpath: 'main-',
     quantity: 9,
   },
   portraits: {
-    title: "Portraits",
     subpath: "Web-",
     quantity: 3,
   },
   vollkontakt: {
-    title: "Vollkontakt",
     subpath: "Kontakt-",
     quantity: 17,
   },
   zeit: {
-    title: "Zeit Online",
     subpath: "Zeit-",
     quantity: 5,
   }
@@ -93,7 +95,7 @@ export const ImagesCollection = () => {
                 return (
                   <div style={{
                     opacity: smoothRender ? 0 : 1,
-                    transition: "all 1s",
+                    transition: "all 1.5s",
                     transform: "scale(1.04) rotate(0.01deg)",
                   }}>
                     <img
@@ -109,25 +111,28 @@ export const ImagesCollection = () => {
                 )
               } else {
                 return (
-                  <div style={{
+                  <div className="example" style={{
                     opacity: smoothRender ? 0 : 1,
                     transition: "all 1.5s",
                     cursor: "pointer",
-                  }}>
+                  }}
+                    onClick={() => {
+                      navigate(`/projects/${mainNavigation[index + 1]}`);
+                    }}
+                  >
                     <img
                       style={{
                         height: 'auto',
                         width: '100%'
                       }}
                       src={imgUrl}
-                      onClick={() => {
-                        navigate(`/projects/${mainNavigation[index + 1]}`);
-                      }}
                       alt="collection"
                       key={index}
                       className="img-hover"
                     />
-                    <p>{mainNavigation[index + 1]}</p>
+                    <div className="content">
+                      <p className="text">{mainTitle[index + 1]}</p>
+                    </div>
                   </div>
                 )
               }
