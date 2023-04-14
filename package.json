@@ -1,7 +1,7 @@
 {
   "name": "joschka-portfolio",
-  "home": "https://sofiaDenisePraderio.github.io/joschka_moser/",
-  "homepage": "https://sofiaDenisePraderio.github.io/joschka_moser",
+  "home": "http://sofiaDenisePraderio.github.io/joschka_moser/",
+  "homepage": "http://sofiaDenisePraderio.github.io/joschka_moser",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
