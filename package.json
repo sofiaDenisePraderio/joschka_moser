@@ -1,6 +1,6 @@
 {
-  "home": "http://sofiaDenisePraderio.github.io/joschka_moser",
   "name": "joschka-portfolio",
+  "home": "http://sofiaDenisePraderio.github.io/joschka_moser",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

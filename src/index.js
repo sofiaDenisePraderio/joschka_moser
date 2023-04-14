@@ -1,7 +1,7 @@
 import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import { ImagesCollection } from '../src/components/ImagesCollection';
 import { Header } from '../src/components/Header';
@@ -11,7 +11,7 @@ import './custom.scss';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
+    <HashRouter>
       <Container style={{marginTop: "75px"}}>
         <Header />
         <Routes>
@@ -26,6 +26,6 @@ joschka.moser@web.de</div>}/>
           <Route path="*" element={<div mt={4}>oops! this in a error, please go to main again or reload the browser</div>} />
         </Routes>
       </Container>
-    </Router>
+      </HashRouter>
   </React.StrictMode>
 );
