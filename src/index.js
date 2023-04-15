@@ -5,6 +5,7 @@ import { BrowserRouter as HashRouter, Routes, Route, Navigate } from 'react-rout
 import { Container } from 'react-bootstrap';
 import { ImagesCollection } from '../src/components/ImagesCollection';
 import { Header } from '../src/components/Header';
+import { Info } from '../src/components/Info';
 import './index.css';
 import './custom.scss';
 
@@ -18,12 +19,7 @@ root.render(
           <Route path="/projects/:project" element={<ImagesCollection />} />
           <Route path="/*"  element={<App />} />
           <Route path="/home"  element={<App />} />
-          <Route path="/info" element={<div>Joschka Moser is a photographer based in Berlin and Freiburg.In 2022 he graduated from Lette Verein Berlin, working as a freelance photographer since then. His work is often linked to social aspects while having a big love for the everyday aspect of photography.
-            For any kinds of inquiries feel free to contact him
-
-            @joschka_moser
-            +49 15157837059
-            joschka.moser@web.de</div>} />
+          <Route path="/info" element={<Info />} />
           <Route path="*" element={<div mt={4}>oops! this in a error, please go to main again or reload the browser</div>} />
           <Route exact path="/" element={<Navigate to="/home"/>} />
         </Routes>

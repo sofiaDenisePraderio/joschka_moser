@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -84,66 +84,84 @@ export const ImagesCollection = () => {
   const imagesList = [...new Array(projects[project].quantity)].map((number, index) =>
     `/joschka_moser/images/${project}/${projects[project].subpath}${index + 1}.jpg`)
 
+  const [loading, setLoading] = useState(true);
+  const counter = useRef(0);
+  const imageLoaded = () => {
+    counter.current += 1;
+    if (counter.current >= imagesList.length) {
+      setLoading(false);
+    }
+  }
+
   return (
-    <div className="py-4" style={{                    opacity: smoothRender ? 0 : 1,
-      transition: "all 1.5s",}}>
-      <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-      >
-        <Masonry gutter="50px">
-          {
-            imagesList.map((imgUrl, index) => {
-              if (project !== "main") {
-                return (
-                  <div style={{
-                    opacity: smoothRender ? 0 : 1,
-                    transition: "all 1.5s",
-                    transform: "scale(1.04) rotate(0.01deg)",
-                  }}>
-                    <img
-                    loading="lazy"
-                      src={imgUrl}
-                      style={{
-                        height: 'auto',
-                        width: '100%'
-                      }}
-                      alt="collection"
-                      key={index}
-                    />
-                  </div>
-                )
-              } else {
-                return (
-                  <div className="example" style={{
-                    opacity: smoothRender ? 0 : 1,
-                    transition: "all 1.5s",
-                    cursor: "pointer",
-                  }}
-                    onClick={() => {
-                      navigate(`/projects/${mainNavigation[index + 1]}`);
-                    }}
-                  >
-                    <img
-                    loading="lazy"
-                      style={{
-                        height: 'auto',
-                        width: '100%'
-                      }}
-                      src={imgUrl}
-                      alt="collection"
-                      key={index}
-                      className="img-hover"
-                    />
-                    <div className="content">
-                      <p className="text">{mainTitle[index + 1]}</p>
+    <>
+      <div style={{ display: loading ? "block" : "none" }}>
+        Loading images,
+      </div>
+      <div className="py-4" 
+      style={{
+        display: loading ? "none" : "block",
+        opacity: smoothRender ? 0 : 1,
+        transition: "all 1.5s",
+      }}>
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+        >
+          <Masonry gutter="50px">
+            {
+              imagesList.map((imgUrl, index) => {
+                if (project !== "main") {
+                  return (
+                    <div style={{
+                      opacity: smoothRender ? 0 : 1,
+                      transition: "all 1.5s",
+                      transform: "scale(1.04) rotate(0.01deg)",
+                    }}>
+                      <img
+                        onLoad={imageLoaded}
+                        src={imgUrl}
+                        style={{
+                          height: 'auto',
+                          width: '100%'
+                        }}
+                        alt="collection"
+                        key={index}
+                      />
                     </div>
-                  </div>
-                )
-              }
-            })
-          }
-        </Masonry>
-      </ResponsiveMasonry>
-    </div>
+                  )
+                } else {
+                  return (
+                    <div className="example" style={{
+                      opacity: smoothRender ? 0 : 1,
+                      transition: "all 1.5s",
+                      cursor: "pointer",
+                    }}
+                      onClick={() => {
+                        navigate(`/projects/${mainNavigation[index + 1]}`);
+                      }}
+                    >
+                      <img
+                        onLoad={imageLoaded}
+                        style={{
+                          height: 'auto',
+                          width: '100%'
+                        }}
+                        src={imgUrl}
+                        alt="collection"
+                        key={index}
+                        className="img-hover"
+                      />
+                      <div className="content">
+                        <p className="text">{mainTitle[index + 1]}</p>
+                      </div>
+                    </div>
+                  )
+                }
+              })
+            }
+          </Masonry>
+        </ResponsiveMasonry>
+      </div>
+    </>
   )
 };
