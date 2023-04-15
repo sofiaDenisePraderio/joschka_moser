@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/joschka_moser/static/css/main.2ee399cb.css",
-    "main.js": "/joschka_moser/static/js/main.fa0a4a47.js",
+    "main.js": "/joschka_moser/static/js/main.8d124292.js",
     "index.html": "/joschka_moser/index.html",
     "main.2ee399cb.css.map": "/joschka_moser/static/css/main.2ee399cb.css.map",
-    "main.fa0a4a47.js.map": "/joschka_moser/static/js/main.fa0a4a47.js.map"
+    "main.8d124292.js.map": "/joschka_moser/static/js/main.8d124292.js.map"
   },
   "entrypoints": [
     "static/css/main.2ee399cb.css",
-    "static/js/main.fa0a4a47.js"
+    "static/js/main.8d124292.js"
   ]
 }
