@@ -89,16 +89,18 @@ export const ImagesCollection = () => {
   const [loading, setLoading] = useState(true);
   console.log(loading, 'loading')
   const counter = useRef(0);
-  const imageLoaded = () => {
-    counter.current += 1;
-    if (counter.current >= imagesList.length) {
-      setLoading(false);
-    }
-  }
+  // const imageLoaded = () => {
+  //   counter.current += 1;
+  //   if (counter.current >= imagesList.length) {
+  //     setLoading(false);
+  //   }
+  // }
 
   return (
     <>
-      <div style={{ display: loading ? "block" : "none" }}/>
+      <div style={{ display: loading ? "block" : "none" }}>
+        ...
+      </div>
       <div className="py-4"
         style={{
           display: loading ? "none" : "block",
@@ -120,7 +122,7 @@ export const ImagesCollection = () => {
                     }}>
                       <img
                         loading="lazy"
-                        onLoad={imageLoaded}
+                        // onLoad={imageLoaded}
                         src={imgUrl}
                         style={{
                           height: 'auto',
@@ -144,7 +146,7 @@ export const ImagesCollection = () => {
                     >
                       <img
                         loading="lazy"
-                        onLoad={imageLoaded}
+                        // onLoad={imageLoaded}
                         style={{
                           height: 'auto',
                           width: '100%'
