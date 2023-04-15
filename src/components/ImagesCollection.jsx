@@ -101,6 +101,7 @@ export const ImagesCollection = () => {
                     transform: "scale(1.04) rotate(0.01deg)",
                   }}>
                     <img
+                    loading="lazy"
                       src={imgUrl}
                       style={{
                         height: 'auto',
@@ -123,6 +124,7 @@ export const ImagesCollection = () => {
                     }}
                   >
                     <img
+                    loading="lazy"
                       style={{
                         height: 'auto',
                         width: '100%'
