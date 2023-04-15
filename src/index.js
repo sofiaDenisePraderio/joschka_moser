@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter basename="/joschka_moser">
-      <Container style={{ marginTop: "75px" }}>
+      <Container style={{ marginTop: "75px", marginBottom: "100px" }}>
         <Header />
         <Routes>
           <Route path="/projects/:project" element={<ImagesCollection />} />
