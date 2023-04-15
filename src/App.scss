@@ -143,10 +143,9 @@
   opacity: 1;
   transition-delay: 0s;
   transition-duration: 0.4s;
-  margin-top: -40px;
 }
 .example .content:hover .text {
   opacity: 1;
-  transform: translateY(50px);
-  -webkit-transform: translateY(50px);
+  transform: translateY(20px);
+  -webkit-transform: translateY(20px);
 }
