@@ -86,8 +86,8 @@ export const ImagesCollection = () => {
   const imagesList = [...new Array(projects[project].quantity)].map((number, index) =>
     `/joschka_moser/images/${project}/${projects[project].subpath}${index + 1}.jpg`)
 
-  const [loading, setLoading] = useState(true);
-  console.log(loading, 'loading')
+  // const [loading, setLoading] = useState(true);
+  // console.log(loading, 'loading')
   const counter = useRef(0);
   // const imageLoaded = () => {
   //   counter.current += 1;
@@ -98,9 +98,9 @@ export const ImagesCollection = () => {
 
   return (
     <>
-      <div style={{ display: loading ? "block" : "none" }}>
+      {/* <div style={{ display: loading ? "block" : "none" }}>
         ...
-      </div>
+      </div> */}
       <div className="py-4"
         style={{
           display: loading ? "none" : "block",
