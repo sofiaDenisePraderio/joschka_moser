@@ -16,7 +16,7 @@ root.render(
         <Header />
         <Routes>
           <Route path="/projects/:project" element={<ImagesCollection />} />
-          <Route path="/" element={<App />} />
+          <Route path="/*"  element={<App />} />
           <Route path="/info" element={<div>Joschka Moser is a photographer based in Berlin and Freiburg.In 2022 he graduated from Lette Verein Berlin, working as a freelance photographer since then. His work is often linked to social aspects while having a big love for the everyday aspect of photography.
             For any kinds of inquiries feel free to contact him
 
