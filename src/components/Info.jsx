@@ -4,6 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 export const Info = () => {
   return (
     <Container style={{ paddingTop: "40px" }}>
+      azsexdrcftvgbhjnkml,
       <Row>Joschka Moser is a photographer based in Berlin and Freiburg.</Row>
       <Row>In 2022 he graduated from Lette Verein Berlin, working as a freelance photographer since then.</Row>
       <Row style={{ marginBottom: "15px" }}>His work is often linked to social aspects while having a big love for the everyday aspect of photography.</Row>
