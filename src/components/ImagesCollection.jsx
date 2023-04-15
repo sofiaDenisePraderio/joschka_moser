@@ -111,7 +111,7 @@ export const ImagesCollection = () => {
                         height: 'auto',
                         width: '100%'
                       }}
-                      alt="collection"
+                      alt=""
                       key={index}
                     />
                   </div>
@@ -134,7 +134,7 @@ export const ImagesCollection = () => {
                         width: '100%'
                       }}
                       src={imgUrl}
-                      alt="collection"
+                      alt=""
                       key={index}
                       className="img-hover"
                     />
