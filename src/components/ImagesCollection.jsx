@@ -103,7 +103,7 @@ export const ImagesCollection = () => {
       </div> */}
       <div className="py-4"
         style={{
-          display: loading ? "none" : "block",
+          // display: loading ? "none" : "block",
           opacity: smoothRender ? 0 : 1,
           transition: "all 1.5s",
         }}>
