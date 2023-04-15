@@ -75,16 +75,19 @@ export const ImagesCollection = () => {
   const navigate = useNavigate();
   const [smoothRender, setsmoothRender] = useState(true);
 
+  console.log('project', project)
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    setTimeout(() => setsmoothRender(false), 40);
-    console.log('changed');
+    setTimeout(() => setsmoothRender(false), 150);
+    console.log('useEffect')
   }, [project]);
 
   const imagesList = [...new Array(projects[project].quantity)].map((number, index) =>
     `/joschka_moser/images/${project}/${projects[project].subpath}${index + 1}.jpg`)
 
   const [loading, setLoading] = useState(true);
+  console.log(loading, 'loading')
   const counter = useRef(0);
   const imageLoaded = () => {
     counter.current += 1;
@@ -95,15 +98,13 @@ export const ImagesCollection = () => {
 
   return (
     <>
-      <div style={{ display: loading ? "block" : "none" }}>
-        Loading images,
-      </div>
-      <div className="py-4" 
-      style={{
-        display: loading ? "none" : "block",
-        opacity: smoothRender ? 0 : 1,
-        transition: "all 1.5s",
-      }}>
+      <div style={{ display: loading ? "block" : "none" }}/>
+      <div className="py-4"
+        style={{
+          display: loading ? "none" : "block",
+          opacity: smoothRender ? 0 : 1,
+          transition: "all 1.5s",
+        }}>
         <ResponsiveMasonry
           columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
         >
@@ -118,6 +119,7 @@ export const ImagesCollection = () => {
                       transform: "scale(1.04) rotate(0.01deg)",
                     }}>
                       <img
+                        loading="lazy"
                         onLoad={imageLoaded}
                         src={imgUrl}
                         style={{
@@ -141,6 +143,7 @@ export const ImagesCollection = () => {
                       }}
                     >
                       <img
+                        loading="lazy"
                         onLoad={imageLoaded}
                         style={{
                           height: 'auto',
